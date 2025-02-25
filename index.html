@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In My room In my life(゜ω゜)</title>
+    <style>
+        :root {
+            --bg-color: #111111;
+            --card-bg: #1a1a1a;
+            --accent-color: #ff4081;
+            --text-color: #ffffff;
+            --text-secondary: #888888;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            position: relative;
+            background: var(--card-bg);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            overflow: hidden;
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(image.jpg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            color: var(--accent-color);
+            letter-spacing: 0.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--card-bg);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .profile-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .card-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* YouTube Section */
+        .youtube-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .youtube-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 2px solid var(--accent-color);
+            margin-top: 4rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background"></div>
+        <div class="container">
+            <h1>In My room In my life</h1>
+            <p>雑多に適当にほどよい生活。</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#3dcg">3DCG</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about">
+                <div class="profile-container">
+                    <img src="IMG20241230213428.jpg" alt="Profile" class="profile-image">
+                </div>
+                <p>曲を作ってみたり、3DCGを作ってみたり、ユーチューブとったり、ブログを書いたりする予定です。日記。</p>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2 class="section-title">Music</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="Song 1" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Song Title 1</h3>
+                        <p class="card-date">2025.01</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="Song 2" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Song Title 2</h3>
+                        <p class="card-date">2024.12</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="3dcg">
+            <h2 class="section-title">3DCG Works</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="3DCG Work 1" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">3DCG Work 1</h3>
+                        <p>作品の説明文をここに入れます。</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="3DCG Work 2" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">3DCG Work 2</h3>
+                        <p>作品の説明文をここに入れます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="youtube">
+            <h2 class="section-title">YouTube</h2>
+            <div class="grid">
+                <div class="youtube-embed">
+                    <div class="youtube-placeholder">
+                        <p>YouTube Video 1</p>
+                    </div>
+                </div>
+                <div class="youtube-embed">
+                    <div class="youtube-placeholder">
+                        <p>YouTube Video 2</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2 class="section-title">Blog</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="Blog Post 1" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Blog Post 1</h3>
+                        <p class="card-date">2025.01.13</p>
+                        <p>ブログ記事の概要をここに入れます。</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/api/placeholder/300/250" alt="Blog Post 2" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Blog Post 2</h3>
+                        <p class="card-date">2025.01.10</p>
+                        <p>ブログ記事の概要をここに入れます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 CREATOR NAME</p>
+        </div>
+    </footer>
+</body>
+</html>
